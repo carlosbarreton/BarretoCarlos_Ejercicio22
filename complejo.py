@@ -22,3 +22,10 @@ class Complejo():
         a.real = r * math.cos(n * theta)
         a.imaginario = r * math.sin(n * theta)
         return a 
+    
+    def mult(self,b):
+        # b es un complejo que voy a multiplicar por este complejo
+        mult_real = self.real*b.real - self.imaginario*b.imaginario
+        mult_imaginario = self.real*b.imaginario + self.imaginario*b.real
+        self.real = mult_real
+        self.imaginario = mult_imaginario

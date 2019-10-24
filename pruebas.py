@@ -37,7 +37,25 @@ class TestComplejo(unittest.TestCase):
         d = c.pow(6)
         self.assertAlmostEqual(d.real,0.0)
         self.assertAlmostEqual(d.imaginario,-8.0)
+    
+    def test_mult(self):
+        a = complejo.Complejo(0.0,1.0)
+        b = complejo.Complejo(0.0,1.0)
+        a.mult(b)
+        self.assertEqual(a.real,-1.0)
+        self.assertEqual(a.imaginario,0,0)
 
+        a = complejo.Complejo(3.0,2.0)
+        b = complejo.Complejo(1.0,4.0)
+        a.mult(b)
+        self.assertEqual(a.real, -5.0)
+        self.assertEqual(a.imaginario, 14.0)
+
+        a = complejo.Complejo(7.0, -9.0)
+        b = complejo.Complejo(4.0, -6.0)
+        a.mult(b)
+        self.assertEqual(a.real,-26.0)
+        self.assertEqual(a.imaginario, -78.0)
 
 if __name__ == '__main__':
     unittest.main()
